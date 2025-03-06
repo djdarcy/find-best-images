@@ -30,7 +30,7 @@
 ### Option 1: Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/find-best-images.git
+git clone https://github.com/djdarcy/find-best-images.git
 cd find-best-images
 ```
 
@@ -45,13 +45,13 @@ pip install -r requirements.txt
 Install directly from GitHub:
 
 ```bash
-pip install git+https://github.com/yourusername/find-best-images.git
+pip install git+https://github.com/djdarcy/find-best-images.git
 ```
 
 Or, if you want to install in editable mode:
 
 ```bash
-git clone https://github.com/yourusername/find-best-images.git
+git clone https://github.com/djdarcy/find-best-images.git
 cd find-best-images
 pip install -e .
 ```
