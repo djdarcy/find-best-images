@@ -76,9 +76,47 @@ python find_best_images.py -i "d:\" --recursive --copy-best --collect-results \
 
 *This command recursively scans `d:\` while including only directories with names like `__training` or `input` and excluding directories related to outputs and non-relevant sources.*
 
+## Command Reference Table
+
+| Command/Option             | Description                                           |
+|----------------------------|-------------------------------------------------------|
+| `-i`, `--input-dir`        | Specify input directories to scan (multiple allowed). |
+| `-o`, `--output-dir`       | Directory to store organized images.                  |
+| `-r`, `--recursive`        | Recursively scan subdirectories.                      |
+| `--copy-best`              | Copy best images instead of linking them.             |
+| `--collect-results`        | Collect best images into a single directory.          |
+| `--include-dirs-pattern`   | Include directories matching glob/regex patterns.     |
+| `--exclude-dirs-pattern`   | Exclude directories matching glob/regex patterns.     |
+| `--pattern-mode`           | Pattern mode: `glob` (default) or `regex`.            |
+| `--primary-metrics`        | Primary quality metrics, evaluated in strict order.   |
+| `--secondary-metrics`      | Secondary metrics if primary metrics tie.             |
+| `--force`                  | Force operation even if output directories exist.     |
+
+## FAQ
+
+**What's the difference between dimensions and resolution?**
+
+- **Dimensions**: Pixel width and height (e.g., 4000x3000).
+- **Resolution**: Pixel density (e.g., 300 DPI), important for print quality.
+
+**Can I preview changes before applying them?**
+
+- Use `--dryrun` to simulate changes without modifying your files.
+
+**Does it support cloud storage?**
+
+- Currently supports local file systems; cloud storage integration is possible, but it's far down the roadmap.
+
 ## Contributing
 
-Contributions, issues, and feature requests are welcome!  
+Contributions, issues, and feature requests are welcome!
+
+- **Future enhancements:**
+  - More advanced AI-driven similarity checks.
+  - Picture-in-picture analysis beyond simple region checks.
+  - Improved UI for interactive selections.
+  - Cloud storage integration.
+     
 1. Fork the repository.  
 2. Create a feature branch (e.g., `feature/new-metric`).  
 3. Commit your changes.  
