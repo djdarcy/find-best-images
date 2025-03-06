@@ -16,11 +16,11 @@
 
 ## Typical Use Cases
 
-1. **Dataset Curation:**  
-   Automatically curate large datasets (e.g., 4000+ images) by selecting the best images for AI training.
+1. **Digital Asset Management:**  
+   Manage and deduplicate image collections from multiple sources, such as photography projects, social media organization, or generation runs.
 
-2. **Digital Asset Management:**  
-   Manage and deduplicate image collections from multiple sources, such as generation runs, photography projects, or social media scrapes.
+2. **Dataset Curation:**  
+   Automatically curate large datasets (e.g., 4000+ images) by selecting the best images for AI training.
 
 3. **Creative Workflows:**  
    Use the tool as a pre-processor for artistic projects or game development, ensuring only the highest quality images are used.
