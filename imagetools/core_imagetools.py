@@ -162,7 +162,8 @@ def find_images(input_dirs, exclude_dirs=None, recursive=True, follow_symlinks=F
                 min_file_size=0, extensions=None, logger=None, show_progress=True,
                 include_dirs_pattern=None, include_files_pattern=None,
                 exclude_dirs_pattern=None, exclude_files_pattern=None,
-                pattern_mode="glob"):
+                include_pattern=None, exclude_pattern=None,
+                max_depth=None, pattern_mode="glob"):
     """
     Traverse directories to find valid images with pattern filtering.
     
@@ -179,6 +180,9 @@ def find_images(input_dirs, exclude_dirs=None, recursive=True, follow_symlinks=F
         include_files_pattern: List of patterns to include files
         exclude_dirs_pattern: List of patterns to exclude directories
         exclude_files_pattern: List of patterns to exclude files
+        include_pattern: List of patterns for both dirs and files
+        exclude_pattern: List of patterns to exclude both dirs and files
+        max_depth: Maximum directory depth to search (None = unlimited)
         pattern_mode: "glob" or "regex"
         
     Returns:
@@ -220,6 +224,14 @@ def find_images(input_dirs, exclude_dirs=None, recursive=True, follow_symlinks=F
             walk_kwargs['followlinks'] = True
             
         for root, dirs, files in os.walk(input_dir, **walk_kwargs):
+            # Calculate current depth for max_depth filtering
+            rel_path = os.path.relpath(root, input_dir)
+            current_depth = 0 if rel_path == '.' else rel_path.count(os.sep) + 1
+            
+            # Check max depth
+            if max_depth is not None and current_depth >= max_depth:
+                dirs.clear()  # Don't descend further
+            
             # Check if the current directory should be excluded
             if any(os.path.abspath(root).startswith(ed) for ed in exclude_dirs):
                 logger.debug(f"Skipping excluded directory: {root}")
