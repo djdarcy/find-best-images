@@ -34,7 +34,7 @@ git clone https://github.com/djdarcy/find-best-images.git
 cd find-best-images
 ```
 
-Install the required dependencies (*though it is recommended to configure a virtual environment before running *`pip install`*, see below*):
+Install the required dependencies (though it is *recommended to configure a virtual environment* before running `pip install`, see below):
 
 ```bash
 pip install -r requirements.txt
