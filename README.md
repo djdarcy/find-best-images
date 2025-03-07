@@ -16,13 +16,13 @@
 
 ## Typical Use Cases
 
-1. **Digital Asset Management:**  
+1. **Digital Asset Management:**
    Manage and deduplicate image collections from multiple sources, such as photography projects, social media organization, or generation runs.
 
-2. **Dataset Curation:**  
+2. **Dataset Curation:**
    Automatically curate large datasets (e.g., 4000+ images) by selecting the best images for AI training.
 
-3. **Creative Workflows:**  
+3. **Creative Workflows:**
    Use the tool as a pre-processor for artistic projects or game development, ensuring only the highest quality images are used.
 
 ## Installation
@@ -34,7 +34,7 @@ git clone https://github.com/djdarcy/find-best-images.git
 cd find-best-images
 ```
 
-Install the required dependencies:
+Install the required dependencies (*though it is recommended to configure a virtual environment before running *`pip install`*, see below*):
 
 ```bash
 pip install -r requirements.txt
@@ -54,6 +54,32 @@ Or, if you want to install in editable mode:
 git clone https://github.com/djdarcy/find-best-images.git
 cd find-best-images
 pip install -e .
+```
+
+## Setting Up a Virtual Environment
+
+To ensure package dependencies are properly managed and avoid conflicts with system-wide Python installations, it is recommended to use a virtual environment.
+
+### Create and Activate a Virtual Environment
+
+- **On macOS/Linux:**
+
+  ```bash
+  python3 -m venv venv
+  source venv/bin/activate
+  ```
+
+- **On Windows:**
+
+  ```powershell
+  python -m venv venv
+  venv\Scripts\activate
+  ```
+
+Once the virtual environment is activated, install the required dependencies:
+
+```bash
+pip install -r requirements.txt
 ```
 
 ## Usage Examples
@@ -116,10 +142,10 @@ Contributions, issues, and feature requests are welcome!
   - Picture-in-picture analysis beyond simple region checks.
   - Improved UI for interactive selections.
   - Cloud storage integration.
-     
-1. Fork the repository.  
-2. Create a feature branch (e.g., `feature/new-metric`).  
-3. Commit your changes.  
+
+1. Fork the repository.
+2. Create a feature branch (e.g., `feature/new-metric`).
+3. Commit your changes.
 4. Open a pull request detailing your improvements.
 
 Please review our [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
@@ -138,4 +164,5 @@ This program is free software: you can redistribute it and/or modify it under th
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.
+You should have received a copy of the GNU General Public License along with this program. If not, see [http://www.gnu.org/licenses/](http://www.gnu.org/licenses/).
+
