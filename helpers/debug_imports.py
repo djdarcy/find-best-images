@@ -182,7 +182,13 @@ if __name__ == "__main__":
     if args.package_path:
         package_root = os.path.abspath(args.package_path)
     else:
-        package_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+        # First, try the current working directory
+        cwd_package_root = os.path.join(os.getcwd(), args.package_name)
+        if os.path.isdir(cwd_package_root):
+            package_root = os.path.abspath(os.getcwd())
+        else:
+            # Fallback to the parent of the script's directory
+            package_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
     
     # Insert package_root into sys.path to allow package imports.
     if package_root not in sys.path:
