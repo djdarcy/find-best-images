@@ -56,7 +56,7 @@ def parse_arguments():
         "\n"
         "Examples:\n"
         "  Most common: search for images with 1080 pixels or more in either dimension:\n"
-        "    imgsrch.py -O 1080 -op gte -r -p .\find_best_image_results\best_collection -a copy -od output_dir_1080_flt -os flat -md 0\n"
+        "    imgsrch.py -O 1080 -op gte -r -p .\\find_best_image_results\\best_collection -a copy -od output_dir_1080_flt -os flat -md 0\n"
         "\n"
         "  Search for large images in both dimensions and output to a file:\n"
         "    imgsrch.py -B 1080 -op gte -r -o images_bigger_than_1080_in_both_dims.txt\n"
